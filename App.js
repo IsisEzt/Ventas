@@ -1,48 +1,67 @@
 import * as React from 'react';
-import { Button, View, Text, StyleSheet} from 'react-native';
+import { Button, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import SRadd from './Pantallas/SRadd';
+
+
+const styles = StyleSheet.create({
+  Boton: {
+    margin: 10,
+    minWidth: "80%",
+    textAlign: "center",
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+  <View 
+  style={styles.container}>
+
+      <view style={styles.Boton}>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="agregar información"
+        color="#33F23A"
       />
+      </view>
+
+      <view style={styles.Boton}>
+      <Button
+        title="Leer información"
+        color="#33F23A"
+
+      />
+      </view>
+
     </View>
   );
 }
 
-function DetailsScreen() {
+function AddScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
+    <SRadd/>
   );
 }
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+function SRPantalla() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Agregar" component={AddScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-export default App;
+export default SRPantalla;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
