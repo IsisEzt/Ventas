@@ -8,7 +8,7 @@ import SRadd from './Pantallas/SRadd';
 
 const styles = StyleSheet.create({
   Boton: {
-    margin: 10,
+    margin: 20,
     minWidth: "80%",
     textAlign: "center",
   },
@@ -21,23 +21,24 @@ const styles = StyleSheet.create({
 
 function HomeScreen({ navigation }) {
   return (
-  <View 
-  style={styles.container}>
+    <View 
+    style={styles.container} >
 
-      <view style={styles.Boton}>
+      <View style={styles.Boton}>
       <Button
         title="agregar información"
         color="#33F23A"
+        onPress={() => navigation.navigation ('Agregar')}
       />
-      </view>
+      </View>
 
-      <view style={styles.Boton}>
+      <View style={styles.Boton}>
       <Button
         title="Leer información"
         color="#33F23A"
 
       />
-      </view>
+      </View>
 
     </View>
   );
