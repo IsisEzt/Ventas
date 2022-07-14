@@ -28,7 +28,7 @@ function HomeScreen({ navigation }) {
       <Button
         title="agregar información"
         color="#33F23A"
-        onPress={() => navigation.navigation ('Agregar')}
+        onPress={() => navigation.navigate ('Agregar')}
       />
       </View>
 
