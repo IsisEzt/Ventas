@@ -65,7 +65,7 @@ const SRadd = () => {
         <TextInput
         style={styles.input}
         placeholder="Productos"
-        onChangeText={(value)=>capturar('productos',value)}
+        onChangeText={(value)=>capturar('producto',value)}
         />
 
         <TextInput
